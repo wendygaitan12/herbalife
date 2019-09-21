@@ -25,6 +25,19 @@ require 'header.php';
                     <!-- /.box-header -->
                     <!-- centro -->
                     <div class="panel-body">
+
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <div class="small-box bg-aqua">
+                              <div class="inner">
+                                
+                              </div>
+                              <div class="icon">
+                                <i class="ion ion-bag"></i>
+                              </div>
+                              <a href="categoria.php" class="small-box-footer">Categoria <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                       
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <div class="small-box bg-aqua">
                               <div class="inner">
@@ -39,6 +52,7 @@ require 'header.php';
                               <a href="ingreso.php" class="small-box-footer">Compras <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
+
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <div class="small-box bg-green">
                               <div class="inner">
@@ -53,29 +67,9 @@ require 'header.php';
                               <a href="venta.php" class="small-box-footer">Ventas <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
+
                     </div>
-                    <div class="panel-body">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                          <div class="box box-primary">
-                              <div class="box-header with-border">
-                                Compras de los últimos 10 días
-                              </div>
-                              <div class="box-body">
-                                <canvas id="compras" width="400" height="300"></canvas>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                          <div class="box box-primary">
-                              <div class="box-header with-border">
-                                Ventas de los últimos 12 meses
-                              </div>
-                              <div class="box-body">
-                                <canvas id="ventas" width="400" height="300"></canvas>
-                              </div>
-                          </div>
-                        </div>
-                    </div>
+            
                     <!--Fin centro -->
                   </div><!-- /.box -->
               </div><!-- /.col -->

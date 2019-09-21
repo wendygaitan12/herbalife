@@ -22,7 +22,7 @@ if ($_SESSION['ventas']==1)
               <div class="col-md-12">
                   <div class="box">
                     <div class="box-header with-border">
-                          <h1 class="box-title">Cliente <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button> <a href="../reportes/rptclientes.php" target="_blank"><button class="btn btn-info"><i class="fa fa-clipboard"></i> Reporte</button></a></h1>
+                          <h1 class="box-title">Cliente <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
                         <div class="box-tools pull-right">
                         </div>
                     </div>
@@ -38,116 +38,55 @@ if ($_SESSION['ventas']==1)
                             <th>Teléfono</th>
                             <th>Email</th>
                           </thead>
+                          <tbody>                            
+                          </tbody>
+                          <tfoot>
+                            <th>Opciones</th>
+                            <th>Nombre</th>
+                            <th>Documento</th>
+                            <th>Número</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                          </tfoot>
                         </table>
                     </div>
                     <div class="panel-body" style="height: 400px;" id="formularioregistros">
                         <form name="formulario" id="formulario" method="POST">
-                         
-                           <!-- Nombre -->
-                              <div class="row center-content-md-center">
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              <div class="col-sm-6">
-                              <label>Nombre:</label>
-                              <input type="hidden" name="idpersona" id="idpersona">
-                              <input type="hidden" name="tipo_persona" id="tipo_persona" value="Cliente">
-                              <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del proveedor" required>
-                              </div>   
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              </div>
- 
-                               <!-- Documento -->
-                              <div class="row center-content-md-center">
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              <div class="col-sm-6">
-                              <label>Tipo Documento:</label>
-                              <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
-                              <option value="DNI">DPI</option>
-                              <option value="RUC">NIT</option>
-                              </select>
-                              </div>   
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Nombre:</label>
+                            <input type="hidden" name="idpersona" id="idpersona">
+                            <input type="hidden" name="tipo_persona" id="tipo_persona" value="Cliente">
+                            <input type="text" class="form-control" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del proveedor" required>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Tipo Documento:</label>
+                            <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
+                              <option value="DPI">DPI</option>
+                              <option value="NIT">NIT</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Número Documento:</label>
+                            <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento">
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Dirección:</label>
+                            <input type="text" class="form-control" name="direccion" id="direccion" maxlength="70" placeholder="Dirección">
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Teléfono:</label>
+                            <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono">
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" name="email" id="email" maxlength="50" placeholder="Email">
+                          </div>
 
-                              <!-- Número de Documento -->
-                              <div class="row center-content-md-center">
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              <div class="col-sm-6">
-                              <label>Número de Documento:</label>
-                              <input type="text" class="form-control" name="num_documento" id="num_documento" maxlength="20" placeholder="Documento">
-                              </div>   
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              </div>
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
 
-                              <!-- Dirección -->
-                              <div class="row center-content-md-center">
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              <div class="col-sm-6">
-                              <label>Dirección:</label>
-                              <input type="text" class="form-control" name="direccion" id="direccion" maxlength="70" placeholder="Dirección">
-                              </div>   
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              </div>
-
-                              <!-- Teléfono -->
-                              <div class="row center-content-md-center">
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              <div class="col-sm-6">
-                              <label>Teléfono:</label>
-                              <input type="text" class="form-control" name="telefono" id="telefono" maxlength="20" placeholder="Teléfono">
-                              </div>   
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              </div>
-
-                              <!-- Email -->
-                              <div class="row center-content-md-center">
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              <div class="col-sm-6">
-                              <label>Email:</label>
-                              <input type="email" class="form-control" name="email" id="email" maxlength="50" placeholder="Email">
-                              </div>   
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              </div>
-
-                              <!-- Botónes -->
-                              <div class="row center-content-md-center">
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              <div class="col-sm-6">
-                              <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
-                              <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
-                              </div>   
-                              <div class="col-sm-3">
-                              <input type="hidden" name="" id=""> 
-                              </div>
-                              </div>
-
-
-                    
+                            <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+                          </div>
                         </form>
                     </div>
                     <!--Fin centro -->

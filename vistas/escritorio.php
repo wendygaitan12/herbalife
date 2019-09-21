@@ -83,7 +83,7 @@ require 'header.php';
                         </div>
 
                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                          <div class="small-box bg-Blue">
+                          <div class="small-box bg-blue">
                               <div class="inner">
                                 <h4 style="font-size:17px;">
                                 </h4>

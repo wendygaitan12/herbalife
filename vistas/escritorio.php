@@ -13,9 +13,41 @@ require 'header.php';
 
 if ($_SESSION['escritorio']==1)
 {
+  require_once "../modelos/Consultas.php";
+  $consulta = new Consultas();
+  $rsptac = $consulta->totalcomprahoy();
+  $regc=$rsptac->fetch_object();
+  $totalc=$regc->total_compra;
 
-}
+  $rsptav = $consulta->totalventahoy();
+  $regv=$rsptav->fetch_object();
+  $totalv=$regv->total_venta;
 
+  //Datos para mostrar el gráfico de barras de las compras
+  $compras10 = $consulta->comprasultimos_10dias();
+  $fechasc='';
+  $totalesc='';
+  while ($regfechac= $compras10->fetch_object()) {
+    $fechasc=$fechasc.'"'.$regfechac->fecha .'",';
+    $totalesc=$totalesc.$regfechac->total .','; 
+  }
+
+  //Quitamos la última coma
+  $fechasc=substr($fechasc, 0, -1);
+  $totalesc=substr($totalesc, 0, -1);
+
+   //Datos para mostrar el gráfico de barras de las ventas
+  $ventas12 = $consulta->ventasultimos_12meses();
+  $fechasv='';
+  $totalesv='';
+  while ($regfechav= $ventas12->fetch_object()) {
+    $fechasv=$fechasv.'"'.$regfechav->fecha .'",';
+    $totalesv=$totalesv.$regfechav->total .','; 
+  }
+
+  //Quitamos la última coma
+  $fechasv=substr($fechasv, 0, -1);
+  $totalesv=substr($totalesv, 0, -1);
 
 ?>
 <!--Contenido-->
@@ -38,7 +70,7 @@ if ($_SESSION['escritorio']==1)
                           <div class="small-box bg-aqua">
                               <div class="inner">
                                 <h4 style="font-size:17px;">
-                                  <strong>S/ <?php echo $totalc; ?></strong>
+                                  <strong>Q <?php echo $totalc; ?></strong>
                                 </h4>
                                 <p>Compras</p>
                               </div>
@@ -52,7 +84,7 @@ if ($_SESSION['escritorio']==1)
                           <div class="small-box bg-green">
                               <div class="inner">
                                 <h4 style="font-size:17px;">
-                                  <strong>S/ <?php echo $totalv; ?></strong>
+                                  <strong>Q <?php echo $totalv; ?></strong>
                                 </h4>
                                 <p>Ventas</p>
                               </div>
@@ -102,7 +134,7 @@ else
 
 require 'footer.php';
 ?>
-<script type="text/javascript" src="scripts/categoria.js"></script>
+
 <script src="../public/js/chart.min.js"></script>
 <script src="../public/js/Chart.bundle.min.js"></script> 
 <script type="text/javascript">
@@ -207,5 +239,6 @@ var ventas = new Chart(ctx, {
 }
 ob_end_flush();
 ?>
+
 
 

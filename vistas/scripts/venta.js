@@ -211,7 +211,7 @@ function anular(idventa)
 
 //Declaración de variables necesarias para trabajar con las compras y
 //sus detalles
-var impuesto=18;
+var impuesto=12;
 var cont=0;
 var detalles=0;
 //$("#guardar").hide();
@@ -285,7 +285,7 @@ function agregarDetalle(idarticulo,articulo,precio_venta)
   	for (var i = 0; i <sub.length; i++) {
 		total += document.getElementsByName("subtotal")[i].value;
 	}
-	$("#total").html("S/. " + total);
+	$("#total").html("Q/. " + total);
     $("#total_venta").val(total);
     evaluar();
   }

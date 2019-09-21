@@ -41,7 +41,7 @@ require 'header.php';
                         </div>
 
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                          <div class="small-box bg-Red">
+                          <div class="small-box bg-red">
                               <div class="inner">
                                 <h4 style="font-size:17px;">
                                 </h4>
@@ -50,7 +50,7 @@ require 'header.php';
                               <div class="icon">
                                 <i class="ion ion-bag"></i>
                               </div>
-                              <a href="categoria.php" class="small-box-footer">Producto <i class="fa fa-arrow-circle-right"></i></a>
+                              <a href="producto.php" class="small-box-footer">Producto <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                        

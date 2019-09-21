@@ -29,7 +29,9 @@ require 'header.php';
                       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                           <div class="small-box bg-aqua">
                               <div class="inner">
-                                
+                                <h4 style="font-size:17px;">
+                                </h4>
+                                <p>Categoria</p>
                               </div>
                               <div class="icon">
                                 <i class="ion ion-bag"></i>
@@ -85,8 +87,5 @@ require 'footer.php';
 }
 ob_end_flush();
 ?>
-
-
-
 
 
